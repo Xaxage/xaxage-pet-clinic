@@ -21,27 +21,32 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
-    <dependencies>
 
-
-    </dependencies>
 
     <build>
+        <pluginManagement>
         <plugins>
             <plugin>
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
                         <version>${project.parent.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
                 <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
+                    <goals>install</goals>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
         </plugins>
+        </pluginManagement>
     </build>
+
+    <scm>
+        <developerConnection>
+            scm:git:https://github.com/Xaxage/xaxage-pet-clinic.git
+        </developerConnection>
+    </scm>
 
 </project>
