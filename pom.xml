@@ -14,7 +14,7 @@
     </parent>
     <groupId>com.xaxage</groupId>
     <artifactId>xaxage-pet-clinic</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>petClinic</name>
     <description>petClinic</description>
     <properties>
@@ -46,7 +46,7 @@
         <developerConnection>
             scm:git:https://github.com/Xaxage/xaxage-pet-clinic.git
         </developerConnection>
-      <tag>xaxage-pet-clinic-0.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
 </project>
