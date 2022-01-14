@@ -1,11 +1,11 @@
 package com.xaxage.xaxagepetclinic.services.map;
 
 import com.xaxage.xaxagepetclinic.model.Vet;
-import com.xaxage.xaxagepetclinic.services.CrudService;
+import com.xaxage.xaxagepetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
