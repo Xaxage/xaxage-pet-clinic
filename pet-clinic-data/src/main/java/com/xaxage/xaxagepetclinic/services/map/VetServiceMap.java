@@ -2,9 +2,11 @@ package com.xaxage.xaxagepetclinic.services.map;
 
 import com.xaxage.xaxagepetclinic.model.Vet;
 import com.xaxage.xaxagepetclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
