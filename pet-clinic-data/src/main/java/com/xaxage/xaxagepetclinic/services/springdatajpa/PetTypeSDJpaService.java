@@ -3,12 +3,14 @@ package com.xaxage.xaxagepetclinic.services.springdatajpa;
 import com.xaxage.xaxagepetclinic.model.PetType;
 import com.xaxage.xaxagepetclinic.repositories.PetTypeRepository;
 import com.xaxage.xaxagepetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Service
+@Profile("springdatajpa")
 public class PetTypeSDJpaService implements PetTypeService {
     private final PetTypeRepository petTypeRepository;
 

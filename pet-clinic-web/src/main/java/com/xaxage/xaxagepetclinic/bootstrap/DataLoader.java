@@ -1,10 +1,7 @@
 package com.xaxage.xaxagepetclinic.bootstrap;
 
 import com.xaxage.xaxagepetclinic.model.*;
-import com.xaxage.xaxagepetclinic.services.OwnerService;
-import com.xaxage.xaxagepetclinic.services.PetTypeService;
-import com.xaxage.xaxagepetclinic.services.SpecialtyService;
-import com.xaxage.xaxagepetclinic.services.VetService;
+import com.xaxage.xaxagepetclinic.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -19,15 +16,18 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
 
     @Autowired//Kinda like it being here
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
+
 
     @Override
     public void run(String... args) throws Exception {
@@ -94,6 +94,14 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(fionaPet);
 
         ownerService.save(owner2);
+
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionaPet);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy catty");
+
+        visitService.save(catVisit);
 
         System.out.println("Owners loaded...");
 
